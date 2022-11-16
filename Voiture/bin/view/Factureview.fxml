@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="965.0" stylesheets="@../../../Agence/src/CSS/Acceuil.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Facturecontroller">
+   <children>
+      <Text layoutX="415.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SERVICE DE FACTURATION DE LOCATION DE VEHICULE" wrappingWidth="526.55029296875">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Button fx:id="print" layoutX="863.0" layoutY="538.0" mnemonicParsing="false" onAction="#print" prefHeight="43.0" prefWidth="44.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <styleClass>
+            <String fx:value="imp" />
+            <String fx:value="root" />
+         </styleClass>
+         <graphic>
+            <FontAwesomeIconView glyphName="PRINT" size="40" wrappingWidth="37.00000664591789" />
+         </graphic>
+      </Button>
+      <Label layoutX="44.0" layoutY="74.0" prefHeight="44.0" prefWidth="181.0" styleClass="sous" text="Vous louez plus qu'une voiture..." />
+      <Label fx:id="destina" layoutX="-2.0" layoutY="304.0" prefHeight="21.0" prefWidth="91.0">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="68.0" layoutY="25.0" prefHeight="49.0" prefWidth="173.0" text="CAR LOCATION" textFill="#2c64ff">
+         <font>
+            <Font name="Jokerman" size="20.0" />
+         </font>
+      </Label>
+      <ImageView layoutX="20.0" layoutY="25.0">
+         <image>
+            <Image url="@../../../../../../../AppData/Local/Temp/icons8_retro_car_48px.png" />
+         </image>
+      </ImageView>
+      <GridPane layoutX="34.0" layoutY="141.0" prefHeight="356.0" prefWidth="923.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Text fill="#147bb8" strokeType="OUTSIDE" strokeWidth="0.0" text="CNI du client :" wrappingWidth="143.70703125">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#147bb8" strokeType="OUTSIDE" strokeWidth="0.0" text="Telephone du client :" wrappingWidth="199.70703125" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#147bb8" strokeType="OUTSIDE" strokeWidth="0.0" text="Immatriculation du vehicule :" wrappingWidth="227.70703125" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#147bb8" strokeType="OUTSIDE" strokeWidth="0.0" text="Duree :" wrappingWidth="143.70703125" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#147bb8" strokeType="OUTSIDE" strokeWidth="0.0" text="Type de location :" wrappingWidth="178.70703125" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#147bb8" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom du client :" wrappingWidth="143.70703125" GridPane.columnIndex="2">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#147bb8" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix total :" wrappingWidth="179.70703125" GridPane.columnIndex="2" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#147bb8" strokeType="OUTSIDE" strokeWidth="0.0" text="Marque du vehicule :" wrappingWidth="206.70703125" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#147bb8" strokeType="OUTSIDE" strokeWidth="0.0" text="Etabli le:" wrappingWidth="143.70703125" GridPane.columnIndex="2" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Text>
+            <Text fill="#147bb8" strokeType="OUTSIDE" strokeWidth="0.0" text="Date de retour :" wrappingWidth="159.70703125" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Text>
+            <Label fx:id="datedeb" prefHeight="50.0" prefWidth="230.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="prix" prefHeight="47.0" prefWidth="230.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="marque" prefHeight="45.0" prefWidth="230.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="type" prefHeight="44.0" prefWidth="230.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="nom" prefHeight="45.0" prefWidth="230.0" GridPane.columnIndex="3">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="cni" prefHeight="42.0" prefWidth="231.0" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="tel" prefHeight="43.0" prefWidth="231.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="duree" prefHeight="45.0" prefWidth="231.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="datefin" prefHeight="44.0" prefWidth="231.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="immat" prefHeight="40.0" prefWidth="231.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <Text fill="#147bb8" layoutX="496.0" layoutY="534.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A" wrappingWidth="72.70703125">
+         <font>
+            <Font name="System Bold Italic" size="20.0" />
+         </font>
+      </Text>
+      <Label layoutX="628.0" layoutY="517.0" text="DOUALA">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Line endX="864.0" layoutX="101.0" layoutY="119.0" startX="-100.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="570.0" styleClass="anc" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Modifierusercontroller">
+   <children>
+      <HBox layoutX="-7.0" layoutY="-1.0" prefHeight="102.0" prefWidth="580.0" style="-fx-background-color: #9393FF;" styleClass="anch" />
+      <JFXButton fx:id="enreg" buttonType="RAISED" contentDisplay="TOP" layoutX="212.0" layoutY="541.0" onAction="#Enregitrer" prefHeight="55.0" prefWidth="147.0" styleClass="tb" stylesheets="@../css/style1.css" text="          Enregistrer">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Label layoutX="40.0" layoutY="21.0" prefHeight="57.0" prefWidth="515.0" text="MODIFICATION D'UN UTILISATEUR" textAlignment="JUSTIFY">
+         <font>
+            <Font name="MV Boli" size="28.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="48.0" layoutY="119.0" prefHeight="334.0" prefWidth="473.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="261.0" minWidth="10.0" prefWidth="173.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.0" minWidth="10.0" prefWidth="215.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Password" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Britannic Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label prefHeight="21.0" prefWidth="114.0" text="Poste" GridPane.rowIndex="2">
+               <font>
+                  <Font name="Britannic Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label text="Nom de l'utilisateur">
+               <font>
+                  <Font name="Britannic Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label text="Telephone" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Britannic Bold" size="20.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="telephone" focusColor="#5b5bff" labelFloat="true" promptText="Entrez numero de telephone" styleClass="text" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <JFXTextField fx:id="nomuser" focusColor="#5b5bff" labelFloat="true" prefHeight="16.0" prefWidth="135.0" promptText="Entrez le nom de l'utilisateur" styleClass="text" unFocusColor="BLACK" GridPane.columnIndex="1" />
+            <JFXPasswordField fx:id="password" focusColor="#5b5bff" labelFloat="true" promptText="Entrez le password" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <JFXComboBox fx:id="poste" focusColor="#5b5bff" labelFloat="true" prefHeight="25.0" prefWidth="265.0" promptText="Entrez le poste" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+      <Label layoutX="48.0" layoutY="488.0" text="Photo">
+         <font>
+            <Font name="Britannic Bold" size="20.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="parcour" layoutX="479.0" layoutY="483.0" onAction="#parcourir" prefHeight="33.0" prefWidth="76.0" text="Parcourir" />
+      <JFXTextField fx:id="texparc" labelFloat="true" layoutX="274.0" layoutY="486.0" prefHeight="25.0" prefWidth="184.0" promptText="Entrez le chemin d'acces" />
+      <ImageView layoutX="220.0" layoutY="545.0">
+         <image>
+            <Image url="@../images/icons8_save_48px_1.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

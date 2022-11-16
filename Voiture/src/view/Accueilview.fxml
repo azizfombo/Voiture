@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="695.0" prefWidth="1365.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Accueilcontroller">
+   <children>
+      <BorderPane layoutX="-2.0" layoutY="-1.0" prefHeight="640.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <AnchorPane prefHeight="645.0" prefWidth="301.0" style="-fx-background-color: #9393FF;" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox layoutX="-3.0" layoutY="265.0" prefHeight="479.0" prefWidth="301.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <JFXButton fx:id="reser" onAction="#btnreser" prefHeight="120.0" prefWidth="301.0" text="LOCATION" textFill="#000000ed">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="CLIPBOARD" size="50" />
+                           </graphic></JFXButton>
+                        <JFXButton fx:id="vehi" onAction="#btnvehi" prefHeight="120.0" prefWidth="301.0" text="VEHICULES" textFill="#000000ed">
+                           <graphic>
+                              <MaterialDesignIconView glyphName="CAR" size="60" />
+                           </graphic>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets></JFXButton>
+                        <JFXButton fx:id="perso" onAction="#btnperso" prefHeight="120.0" prefWidth="304.0" text="PERSONNEL" textFill="#000000ed">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="GROUP" size="50" />
+                           </graphic></JFXButton>
+                        <JFXButton fx:id="deco" onAction="#btndeco" prefHeight="120.0" prefWidth="304.0" text="DECONNEXION" textFill="#000000ed" VBox.vgrow="ALWAYS">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="SIGN_OUT" size="50" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+                  <Label layoutX="100.0" layoutY="28.0" prefHeight="49.0" prefWidth="173.0" text="CAR LOCATION" textFill="#2c64ff">
+                     <font>
+                        <Font name="Jokerman" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="user" layoutX="171.0" layoutY="133.0" prefHeight="43.0" prefWidth="122.0" text="            TEXT" textAlignment="JUSTIFY" textFill="#000000ed">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="im" fitHeight="113.0" fitWidth="129.0" layoutX="25.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView layoutX="33.0" layoutY="28.0">
+                     <image>
+                        <Image url="@../images/icons.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </left>
+         <right>
+            <AnchorPane prefHeight="695.0" prefWidth="1067.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="anchorvehi" layoutX="-1.0" prefHeight="639.0" prefWidth="801.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView fx:id="tabTick" layoutX="4.0" layoutY="211.0" prefHeight="471.0" prefWidth="1044.0" styleClass="tableview">
+                           <columns>
+                              <TableColumn fx:id="immat" prefWidth="123.0" text="Immatriculation" />
+                              <TableColumn fx:id="marque" prefWidth="134.0" text="Marque" />
+                              <TableColumn fx:id="kilometrage" minWidth="3.0" prefWidth="111.0" text="Kilometrage" />
+                              <TableColumn fx:id="disponibilite" minWidth="7.0" prefWidth="139.0" text="Disponibilité" />
+                              <TableColumn fx:id="prix" prefWidth="154.0" text="Prix Location" />
+                              <TableColumn fx:id="operation1" minWidth="3.0" prefWidth="111.0" text="Operation" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <JFXButton fx:id="ajoutvehi" buttonType="RAISED" layoutX="113.0" layoutY="122.0" onAction="#addvehi" prefHeight="64.0" prefWidth="134.0" styleClass="tb" text="             Ajouter">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <TextField fx:id="rechvehi" layoutX="796.0" layoutY="109.0" onKeyPressed="#rechvehi" prefHeight="25.0" prefWidth="199.0" promptText="            Recherche" styleClass="rec" />
+                        <JFXButton fx:id="affichervehi" buttonType="RAISED" layoutX="461.0" layoutY="121.0" onAction="#actuvehi" prefHeight="62.0" prefWidth="131.0" styleClass="tb" text="              Actualiser">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <ComboBox fx:id="combvehi" layoutX="796.0" layoutY="154.0" prefHeight="25.0" prefWidth="199.0" promptText="Rechercher par" styleClass="cb" />
+                        <Pane layoutX="407.0" layoutY="14.0" prefHeight="66.0" prefWidth="200.0" styleClass="bl">
+                           <children>
+                              <Pane layoutX="4.0" layoutY="3.0" prefHeight="60.0" prefWidth="192.0" styleClass="fond">
+                                 <children>
+                                    <Label layoutX="25.0" layoutY="6.0" prefHeight="49.0" prefWidth="142.0" text="VEHICULES" textFill="#2c64ff">
+                                       <font>
+                                          <Font name="Mistral" size="36.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <ImageView fitHeight="40.0" fitWidth="45.0" layoutX="124.0" layoutY="136.0">
+                           <image>
+                              <Image url="@../images/icons8_add_40px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="473.0" layoutY="133.0">
+                           <image>
+                              <Image url="@../images/icons8_refresh_40px_2.png" />
+                           </image>
+                        </ImageView>
+                     </children></AnchorPane>
+                  <AnchorPane fx:id="anchorreser" layoutX="1.0" prefHeight="617.0" prefWidth="798.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Pane layoutX="440.0" layoutY="20.0" prefHeight="66.0" prefWidth="200.0" styleClass="bl">
+                           <children>
+                              <Pane layoutX="4.0" layoutY="3.0" prefHeight="60.0" prefWidth="192.0" styleClass="fond">
+                                 <children>
+                                    <Label layoutX="33.0" layoutY="6.0" prefHeight="49.0" prefWidth="127.0" text="LOCATION" textFill="#2c64ff">
+                                       <font>
+                                          <Font name="Mistral" size="36.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <TableView fx:id="tabTick1" layoutX="-2.0" layoutY="215.0" prefHeight="475.0" prefWidth="1069.0" styleClass="tableview">
+                           <columns>
+                              <TableColumn fx:id="CniCli" prefWidth="92.0" text="CNI Client" />
+                              <TableColumn fx:id="NomCli" prefWidth="87.0" text="Nom Client" />
+                              <TableColumn fx:id="TelCli" minWidth="3.0" prefWidth="84.0" text="Telephone" />
+                              <TableColumn fx:id="typeLoc" prefWidth="64.0" text="Type" />
+                              <TableColumn fx:id="datedebut" prefWidth="127.0" text="Date de Depart" />
+                              <TableColumn fx:id="duree" prefWidth="62.0" text="Duree" />
+                              <TableColumn fx:id="datefin" prefWidth="128.0" text="Date de fin" />
+                              <TableColumn fx:id="immatri" prefWidth="71.0" text="Immatriculation" />
+                              <TableColumn fx:id="marque1" prefWidth="113.0" text="Marque" />
+                              <TableColumn fx:id="prixtot" minWidth="0.0" text="Prix Total" />
+                              <TableColumn fx:id="operation2" prefWidth="158.0" text="Operation" />
+                           </columns>
+                        </TableView>
+                        <JFXButton fx:id="ajoutreser" buttonType="RAISED" layoutX="121.0" layoutY="132.0" onAction="#add" prefHeight="64.0" prefWidth="134.0" styleClass="tb" text="             Ajouter">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <TextField fx:id="rechreser" layoutX="809.0" layoutY="128.0" onKeyPressed="#rechreser" prefHeight="25.0" prefWidth="199.0" promptText="            Recherche" styleClass="rec" />
+                        <JFXButton fx:id="afficherreser" buttonType="RAISED" layoutX="363.0" layoutY="133.0" onAction="#actureser" prefHeight="62.0" prefWidth="131.0" styleClass="tb" text="              Actualiser">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <ComboBox fx:id="combreser" layoutX="809.0" layoutY="164.0" prefHeight="25.0" prefWidth="199.0" promptText="Rechercher par" styleClass="cb" />
+                        <JFXButton fx:id="bandit" buttonType="RAISED" layoutX="568.0" layoutY="132.0" onAction="#bandi" prefHeight="62.0" prefWidth="164.0" styleClass="tb" text="              Clients Invalides">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <ImageView fitHeight="43.0" fitWidth="41.0" layoutX="580.0" layoutY="143.0">
+                           <image>
+                              <Image url="@../images/icons8_id_not_verified_40px_2.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="373.0" layoutY="145.0">
+                           <image>
+                              <Image url="@../images/icons8_refresh_40px_2.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="42.0" fitWidth="45.0" layoutX="128.0" layoutY="144.0">
+                           <image>
+                              <Image url="@../images/icons8_add_40px.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="anchouser" layoutX="-2.0" layoutY="-3.0" prefHeight="637.0" prefWidth="801.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <TableView fx:id="tabTick11" layoutX="-2.0" layoutY="215.0" prefHeight="479.0" prefWidth="1052.0" styleClass="tableview">
+                           <columns>
+                              <TableColumn fx:id="iduser" prefWidth="109.0" text="ID User" />
+                              <TableColumn fx:id="nomuser" prefWidth="129.0" text="Nom User" />
+                              <TableColumn fx:id="poste" minWidth="3.0" prefWidth="111.0" text="Poste" />
+                              <TableColumn fx:id="teluser" minWidth="7.0" prefWidth="150.0" text="Telephone User" />
+                              <TableColumn fx:id="operation" minWidth="7.0" prefWidth="150.0" text="Operation" />
+                           </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <JFXButton fx:id="ajoutperso" buttonType="RAISED" layoutX="126.0" layoutY="141.0" onAction="#addperso" prefHeight="64.0" prefWidth="134.0" styleClass="tb" text="             Ajouter">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <TextField fx:id="rechperso" layoutX="821.0" layoutY="129.0" onKeyPressed="#rechperso" prefHeight="25.0" prefWidth="199.0" promptText="            Recherche" styleClass="rec" />
+                        <JFXButton fx:id="afficherperso" buttonType="RAISED" layoutX="451.0" layoutY="141.0" onAction="#actuperso" prefHeight="62.0" prefWidth="131.0" styleClass="tb" text="              Actualiser">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <ComboBox fx:id="combperso" layoutX="821.0" layoutY="172.0" prefHeight="25.0" prefWidth="199.0" promptText="Rechercher par" styleClass="cb" />
+                        <Pane layoutX="444.0" layoutY="23.0" prefHeight="66.0" prefWidth="200.0" styleClass="bl">
+                           <children>
+                              <Pane layoutX="4.0" layoutY="3.0" prefHeight="60.0" prefWidth="192.0" styleClass="fond">
+                                 <children>
+                                    <Label layoutX="21.0" layoutY="5.0" prefHeight="49.0" prefWidth="157.0" text="PERSONNEL" textFill="#2c64ff">
+                                       <font>
+                                          <Font name="Mistral" size="36.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                        <ImageView fitHeight="40.0" fitWidth="45.0" layoutX="138.0" layoutY="153.0">
+                           <image>
+                              <Image url="@../images/icons8_add_40px.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView layoutX="463.0" layoutY="153.0">
+                           <image>
+                              <Image url="@../images/icons8_refresh_40px_2.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </right>
+      </BorderPane>
+      <Label layoutX="-173.0" layoutY="-11.0" prefHeight="49.0" prefWidth="173.0" text="CAR LOCATION" textFill="#2c64ff">
+         <font>
+            <Font name="Jokerman" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
